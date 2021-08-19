@@ -1,7 +1,11 @@
-language: ruby
+sudo:          false
+language:      node_js
+node_js:
+  - "node"
+install:       npm install
 script:
-  - gem install jekyll bundler
-  - bundle install
-  - bundle exec rake test
-  - bundle exec jekyll build
-cache: bundler
+  - npm test
+  - gulp
+cache:
+  directories:
+    - node_modules
